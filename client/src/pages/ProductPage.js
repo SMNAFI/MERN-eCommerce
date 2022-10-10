@@ -30,7 +30,7 @@ const ProductPage = () => {
 
             <ListGroup.Item>Price: ${product.price}</ListGroup.Item>
 
-            <ListGroup.Item>Description: ${product.description}</ListGroup.Item>
+            <ListGroup.Item>Description: {product.description}</ListGroup.Item>
           </ListGroup>
         </Col>
 
@@ -40,7 +40,9 @@ const ProductPage = () => {
               <ListGroup.Item>
                 <Row>
                   <Col>Price: </Col>
-                  <Col>${product.price}</Col>
+                  <Col>
+                    <strong>${product.price}</strong>
+                  </Col>
                 </Row>
               </ListGroup.Item>
 
