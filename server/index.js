@@ -1,12 +1,25 @@
 import express from 'express'
 import cors from 'cors'
 import dotenv from 'dotenv'
+// this is module type importing
+// so fileName.js must be included
+// in package.json
+// "type": "module"
+// needs to be added
+import connectDB from './config/db.js'
 import products from './data/products.js'
 
 dotenv.config()
 
+// connect to mongodb
+connectDB()
+
 const app = express()
 app.use(cors())
+
+// npm start
+// script is added in the package.json file
+// "start": "nodemon index.js",
 
 app.get('/', (req, res) => {
   res.json('OHAIOO')
