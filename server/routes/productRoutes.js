@@ -16,6 +16,10 @@ router.get(
     // so async await should use
     const products = await Product.find({})
 
+    // throwing error for checking
+    // res.status(401)
+    // throw new Error('ERROR COMING THROUGH....')
+
     res.json(products)
   })
 )
