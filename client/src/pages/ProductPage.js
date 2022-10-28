@@ -99,7 +99,8 @@ const ProductPage = () => {
                       <Col>Qty</Col>
                       <Col>
                         <Form.Select
-                          value={qty}
+                          // value={qty}
+                          aria-label='Default select example'
                           size='sm'
                           onChange={(e) => setQty(e.target.value)}
                         >
