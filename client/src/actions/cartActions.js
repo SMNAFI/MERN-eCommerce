@@ -1,5 +1,5 @@
 import axios from 'axios'
-import { CART_ADD_ITEM } from '../constants/cartConstants'
+import { CART_ADD_ITEM, CART_REMOVE_ITEM } from '../constants/cartConstants'
 
 // getState will give all the state in the store
 export const addToCart = (id, qty) => async (dispatch, getState) => {
@@ -20,5 +20,14 @@ export const addToCart = (id, qty) => async (dispatch, getState) => {
 
   // storing into local storage also
   // we only store string in local storage and getState().cart.cartItems is a json. so first we need to convert it to a string.
+  localStorage.setItem('cartItems', JSON.stringify(getState().cart.cartItems))
+}
+
+export const removeFromCart = (id) => (dispatch, getState) => {
+  dispatch({
+    type: CART_REMOVE_ITEM,
+    payload: id,
+  })
+
   localStorage.setItem('cartItems', JSON.stringify(getState().cart.cartItems))
 }
