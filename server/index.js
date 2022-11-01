@@ -8,6 +8,7 @@ import dotenv from 'dotenv'
 // needs to be added
 import connectDB from './config/db.js'
 import productRountes from './routes/productRoutes.js'
+import userRountes from './routes/userRoutes.js'
 import { errorHandler, notFound } from './middleware/errorMiddleware.js'
 
 dotenv.config()
@@ -16,6 +17,9 @@ dotenv.config()
 connectDB()
 
 const app = express()
+// this will allow to accept json data in the req.body
+// simply parse request body as JSON
+app.use(express.json())
 app.use(cors())
 
 // npm start
@@ -27,6 +31,7 @@ app.get('/', (req, res) => {
 })
 
 app.use('/api/products', productRountes)
+app.use('/api/users', userRountes)
 
 // custom middleware if invalid path is accessed
 app.use(notFound)
