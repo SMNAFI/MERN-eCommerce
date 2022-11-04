@@ -6,7 +6,12 @@ import {
   productDetailsReducer,
   productListReducer,
 } from './reducers/productReducers'
-import { userLoginReducer, userRegisterReducer } from './reducers/userReducers'
+import {
+  userDetailsReducer,
+  userLoginReducer,
+  userRegisterReducer,
+  userUpdateProfileReducer,
+} from './reducers/userReducers'
 
 // as we have multiple reducer
 // productList acts a state
@@ -16,6 +21,8 @@ const reducer = combineReducers({
   cart: cartReducer,
   userLogin: userLoginReducer,
   userRegister: userRegisterReducer,
+  userDetails: userDetailsReducer,
+  userUpdateProfile: userUpdateProfileReducer,
 })
 
 // getting what in our localstorage

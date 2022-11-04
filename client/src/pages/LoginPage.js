@@ -40,7 +40,7 @@ const LoginPage = () => {
       {loading && <Loader />}
 
       <Form onSubmit={submitHandler}>
-        <Form.Group controID='email'>
+        <Form.Group controlId='email'>
           <Form.Label>Email Address</Form.Label>
           <Form.Control
             type='email'
@@ -50,7 +50,7 @@ const LoginPage = () => {
           ></Form.Control>
         </Form.Group>
 
-        <Form.Group controID='password'>
+        <Form.Group controlId='password'>
           <Form.Label>Password</Form.Label>
           <Form.Control
             type='password'
