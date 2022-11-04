@@ -6,6 +6,7 @@ import {
   productDetailsReducer,
   productListReducer,
 } from './reducers/productReducers'
+import { userLoginReducer, userRegisterReducer } from './reducers/userReducers'
 
 // as we have multiple reducer
 // productList acts a state
@@ -13,6 +14,8 @@ const reducer = combineReducers({
   productList: productListReducer,
   productDetails: productDetailsReducer,
   cart: cartReducer,
+  userLogin: userLoginReducer,
+  userRegister: userRegisterReducer,
 })
 
 // getting what in our localstorage
@@ -21,11 +24,14 @@ const cartItemsFromStorage = localStorage.getItem('cartItems')
   ? JSON.parse(localStorage.getItem('cartItems'))
   : []
 
+const userInfoFromStorage = localStorage.getItem('userInfo')
+  ? JSON.parse(localStorage.getItem('userInfo'))
+  : null
+
 // initialState
 const initialState = {
-  cart: {
-    cartItems: cartItemsFromStorage,
-  },
+  cart: { cartItems: cartItemsFromStorage },
+  userLogin: { userInfo: userInfoFromStorage },
 }
 
 // if we have multiple middleware

@@ -6,6 +6,7 @@ import HomePage from './pages/HomePage'
 import ProductPage from './pages/ProductPage'
 import LoginPage from './pages/LoginPage'
 import CartPage from './pages/CartPage'
+import RegisterPage from './pages/RegisterPage'
 
 function App() {
   return (
@@ -18,6 +19,7 @@ function App() {
             {/* :id will be dynamic */}
             <Route path='/product/:id' element={<ProductPage />} />
             <Route path='/login' element={<LoginPage />} />
+            <Route path='/register' element={<RegisterPage />} />
 
             {/* direct to cart */}
             <Route path='/cart' element={<CartPage />} />
