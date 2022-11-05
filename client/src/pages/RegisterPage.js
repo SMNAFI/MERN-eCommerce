@@ -16,7 +16,7 @@ const RegisterPage = () => {
 
   const navigate = useNavigate()
   const location = useLocation()
-  const redirect = location.search ? location.search.split('=')[1] : '/'
+  const redirect = location.search ? location.search.split('=')[1] : ''
 
   const dispatch = useDispatch()
   const useRegister = useSelector((state) => state.userRegister)
@@ -25,7 +25,7 @@ const RegisterPage = () => {
   // if user exists
   useEffect(() => {
     if (userInfo) {
-      navigate(redirect)
+      navigate(`/${redirect}`)
     }
   }, [navigate, userInfo, redirect])
 
