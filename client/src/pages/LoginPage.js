@@ -22,7 +22,7 @@ const LoginPage = () => {
   // if user exists
   useEffect(() => {
     if (userInfo) {
-      navigate(redirect)
+      navigate(`/${redirect}`)
     }
   }, [navigate, userInfo, redirect])
 
