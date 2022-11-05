@@ -10,7 +10,7 @@ function ShippingPage() {
   const cart = useSelector((state) => state.cart)
   const { shippingAddress } = cart
 
-  const navigate = useNavigate('')
+  const navigate = useNavigate()
   const [address, setAddress] = useState(shippingAddress.address)
   const [city, setCity] = useState(shippingAddress.city)
   const [postalCode, setPostalCode] = useState(shippingAddress.postalCode)
@@ -27,9 +27,8 @@ function ShippingPage() {
 
   return (
     <FormContainer>
+      <CheckoutSteps step1 step2 />
       <h1>Shipping</h1>
-
-      <CheckoutSteps step1 />
 
       <Form onSubmit={submitHandler}>
         <Form.Group controlId='address'>
